@@ -51,11 +51,18 @@ const dNames = function(sentences) {
 }
 
 const containsLowercase = function(sentence) {
-  if (sentence.toUpperCase() != sentence) {
-    return true;
-  } else {
-    return false;
+  // if (sentence.toUpperCase() != sentence) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  for (const letter of sentence) {
+    if (alphabet.includes(letter)) {
+      return true;
+    }
   }
+  return false;
 }
 
 const removeTrolls = function(posts) {
